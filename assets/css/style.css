@@ -1,1 +1,218 @@
-/* font-family: "Inter", serif; */
+:root {
+  --background: linear-gradient(
+    #010208 16%,
+    #010206 21%,
+    #040008 25%,
+    #010101 30%,
+    #010101 34%,
+    #010101 36%,
+    #010101 100%
+  );
+  --forground-100: #ffffff;
+  --forground-85: #ffffffd9;
+
+  --font-size-body: 1.2rem;
+
+  --family-orbitron: "Orbitron";
+  --family-Inter: "Inter";
+  /* --family-Oswald: "Oswald"; */
+
+  --orbitron-black: 900;
+}
+
+body {
+  font-family: var(--family-Inter, sans-serif);
+  font-size: var(--font-size-body, 12);
+  background: var(--background, #010101);
+  color: var(--forground-100, #fff);
+  max-inline-size: 128rem;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: var(--family-orbitron, sans-serif);
+  font-size: 3.169rem;
+  font-weight: var(--orbitron-black, 900);
+}
+
+.not-full-width {
+  padding-inline: 6rem;
+}
+
+.navbar {
+  --logo-font-size: 2.335rem;
+
+  padding-block: 1.5rem;
+}
+
+.navbar-flex-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "IM Fell Great Primer SC", sans-serif;
+  font-size: var(--logo-font-size, 2.335rem);
+}
+
+.menu-button {
+  display: none;
+}
+
+.navbar_list {
+  font-family: var(--family-Inter, sans-serif);
+  font-size: 1.251rem;
+  font-weight: 500;
+}
+
+.navbar_link:hover,
+.navbar_link:focus-visible {
+  color: transparent;
+  background-image: linear-gradient(to right, #c824ec 0%, #df308d 100%);
+  background-clip: text;
+}
+
+.navbar_list-flex-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+.navbar_link {
+  display: block;
+  transition: color 1s;
+}
+
+.navbar_link--active.active {
+  color: transparent;
+  background-image: linear-gradient(to right, #c824ec 0%, #df308d 100%);
+  background-clip: text;
+}
+
+.navbar_link--active::after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  background: #fff;
+  height: 0.3rem;
+  width: 0.9rem;
+  margin: auto;
+}
+
+.navbar_link--active.active::after {
+  visibility: visible;
+}
+
+.button {
+  --direction: to right;
+  --bgcolor-1: #bc3cd8 0%;
+  --bgcolor-2: #c54b8c 100%;
+  --border-radius: 3.34px;
+
+  display: inline-block;
+  position: relative;
+  font-size: 1.106rem;
+  color: inherit;
+  background-image: linear-gradient(
+    var(--direction, to right),
+    var(--bgcolor-1, #bc3cd8 0%),
+    var(--bgcolor-2, #c54b8c 100%)
+  );
+  border: none;
+  border-radius: var(--border-radius);
+  padding-inline: 2.5rem;
+  padding-block: 1rem;
+  min-width: fit-content;
+  transition: all 1s;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: scale(0.9);
+}
+
+.button--default {
+  background: transparent;
+}
+
+.button--default:hover,
+.button--default:focus-visible {
+  transform: scale(1);
+  transition: all 1s;
+}
+
+.button--default::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 0%;
+  inset: 0;
+  animation: animate-no-btn-bg 1s;
+  background: linear-gradient(
+    var(--direction),
+    var(--bgcolor-1),
+    var(--bgcolor-2)
+  );
+  z-index: -1;
+  opacity: 0.4;
+  border-radius: var(--border-radius);
+}
+
+.button--default:hover:after,
+.button--default:focus-visible::after {
+  width: 100%;
+  animation: animate-btn-bg 1s;
+}
+
+@keyframes animate-btn-bg {
+  0% {
+    width: 0%;
+    opacity: 0.1;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes animate-no-btn-bg {
+  0% {
+    width: 100%;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0%;
+    opacity: 0.1;
+  }
+}
+
+@media (max-width: 40em) {
+  .menu-button {
+    font-size: var(--logo-font-size, 2.335rem);
+    display: inline-block;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem 1rem;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: background 1s;
+  }
+
+  .menu-button:hover {
+    background: #ffffff15;
+  }
+
+  .navbar_list {
+    display: none;
+  }
+}
