@@ -57,6 +57,7 @@ p {
 .logo {
   font-family: "IM Fell Great Primer SC", sans-serif;
   font-size: var(--logo-font-size, 2.335rem);
+  user-select: none;
 }
 
 .menu-button {
@@ -137,6 +138,7 @@ p {
   padding-inline: clamp(1.5rem, 1rem + 2.3vw, 2.5rem);
   padding-block: clamp(0.5rem, 0.2rem + 2.3vw, 1rem);
   min-width: fit-content;
+  user-select: none;
   transition: all 1s;
 }
 
@@ -349,6 +351,58 @@ p {
   margin: auto;
 }
 
+/* main */
+
+.experience-playing-game {
+  margin-block-end: 8rem;
+}
+
+.experience-playing-game-flex-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  align-items: start;
+  justify-self: start;
+  gap: clamp(1rem, 1.5rem + 2.3vw, 3rem);
+}
+
+.experience-playing-game_img-male {
+  margin-block-start: 10rem;
+}
+
+.experience-playing-game_text-wrapper {
+  align-self: center;
+
+  display: grid;
+  justify-items: start;
+  gap: 2rem;
+}
+
+.experience-playing-game_title {
+  font-size: clamp(1.7rem, 1.2rem + 2.3vw, 2.085rem);
+  max-inline-size: 15ch;
+}
+
+.experience-playing-game_text {
+  max-inline-size: 28ch;
+}
+
+.banner {
+  background: url(../media/image/banner-remote.svg),
+    url(../media/image/banner.svg);
+  background-repeat: no-repeat;
+  background-size: 8% auto, 90%;
+  background-position: right 15% center, left top 30%;
+  margin-block-end: 8rem;
+}
+
+.virtual-world-text {
+  font-family: var(--family-orbitron, sans-serif);
+  font-size: 1.811rem;
+  font-weight: 600;
+  padding-block: 2rem;
+  max-inline-size: 26ch;
+}
+
 @media (max-width: 40em) {
   .menu-button {
     font-size: var(--logo-font-size, 2.335rem);
@@ -372,5 +426,19 @@ p {
 
   .head-content-grid-layout {
     grid-template-columns: 1fr;
+  }
+
+  .experience-playing-game_text-wrapper {
+    grid-area: 2/1/3/3;
+  }
+
+  .experience-playing-game_text {
+    max-inline-size: unset;
+  }
+
+  .banner {
+    background-size: unset;
+    background-image: url(../media/image/banner.svg);
+    background-position: left top 30%;
   }
 }
