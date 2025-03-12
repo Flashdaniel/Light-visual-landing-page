@@ -370,7 +370,7 @@ p {
 }
 
 .experience-playing-game_text-wrapper {
-  align-self: center;
+  align-self: end;
 
   display: grid;
   justify-items: start;
