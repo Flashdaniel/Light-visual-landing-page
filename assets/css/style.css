@@ -20,6 +20,10 @@
   --orbitron-black: 900;
 }
 
+html {
+  background: #fff;
+}
+
 body {
   font-family: var(--family-Inter, sans-serif);
   font-weight: 400;
@@ -308,6 +312,12 @@ p {
   height: 65%;
   width: 10%;
   background: var(--background);
+  z-index: -1;
+}
+
+.head-img-01 {
+  position: absolute;
+  bottom: 0;
   z-index: -1;
 }
 
