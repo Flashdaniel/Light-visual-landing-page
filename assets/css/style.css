@@ -21,7 +21,7 @@
 }
 
 html {
-  background: #fff;
+  background: #d4d2d2;
 }
 
 body {
@@ -30,7 +30,7 @@ body {
   font-size: var(--font-size-body, 12);
   background: var(--background, #010101);
   color: var(--forground-100, #fff);
-  max-inline-size: 128rem;
+  max-inline-size: 144rem;
   margin: auto;
 }
 
@@ -43,7 +43,7 @@ p {
 }
 
 .not-full-width {
-  padding-inline: clamp(2rem, 1.3rem + 3vw, 6rem);
+  padding-inline: clamp(2rem, 1.7rem + 3.5vw, 8rem);
 }
 
 .navbar {
@@ -413,6 +413,64 @@ p {
   max-inline-size: 26ch;
 }
 
+.reality-headsets_header {
+  font-family: var(--family-orbitron, sans-serif);
+  font-size: clamp(1.5rem, 1rem + 2.3vw, 1.9rem);
+  font-weight: var(--orbitron-black, 900);
+  margin-block-end: 4rem;
+}
+
+.reality-headsets_list {
+  padding: 0;
+  list-style: none;
+  margin-block-end: clamp(5rem, 4rem + 2.3vw, 7rem);
+}
+
+.reality-headsets_list-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+}
+
+.reality-headsets_item {
+  position: relative;
+}
+
+.reality-headsets_img {
+  width: 100%;
+  height: 100%;
+}
+
+.reality-headsets_article {
+  font-size: clamp(0.8rem, 0.5rem + 1vw, 1.5rem);
+  position: absolute;
+  bottom: 0px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 1rem 2rem;
+  max-inline-size: 50%;
+}
+
+.reality-headsets_article--shift-bottom {
+  bottom: 4.2px;
+}
+
+.reality-headsets_item:hover {
+  transform: scale(1.01);
+}
+
+.reality-headsets_title {
+  font-family: var(--family-orbitron, sans-serif);
+  font-weight: 600;
+  margin-block-end: 1rem;
+}
+
+.reality-headsets_text {
+  color: #efdede;
+}
+
 @media (max-width: 40em) {
   .menu-button {
     font-size: var(--logo-font-size, 2.335rem);
@@ -450,5 +508,9 @@ p {
     background-size: unset;
     background-image: url(../media/image/banner.svg);
     background-position: left top 30%;
+  }
+
+  .reality-headsets_list-grid-layout {
+    grid-template-columns: 1fr;
   }
 }
