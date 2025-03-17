@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+  <body class="wrapper">
     <header class="not-full-width">
       <nav class="navbar navbar-flex-layout">
         <a href="/" class="logo">Light</a>
@@ -136,7 +136,7 @@
       </section>
     </header>
 
-    <main>
+    <main class="full-bleed wrapper">
       <section
         aria-labelledby="experience-playing-game"
         class="experience-playing-game experience-playing-game-flex-layout not-full-width"
@@ -175,7 +175,10 @@
         </article>
       </section>
 
-      <section aria-labelledby="virtual-world" class="banner">
+      <section
+        aria-labelledby="virtual-world"
+        class="banner wrapper full-bleed"
+      >
         <p class="virtual-world-text not-full-width" id="virtual-world">
           Awesome experiences with virtual reality world
         </p>
@@ -273,8 +276,8 @@
         </ul>
       </section>
 
-      <section class="clients" aria-labelledby="clients">
-        <div>
+      <section class="clients not-full-width" aria-labelledby="clients">
+        <div class="clients-wrapper">
           <h2 class="clients_title" id="clients">What our clients say</h2>
 
           <p class="clients_text">
@@ -282,8 +285,8 @@
             good or bad we will make ir for evaluation to make EhyalLive better.
           </p>
 
-          <ul class="clients-list">
-            <li class="clients-item">
+          <ul class="clients-list clients-list-flex-layout">
+            <li class="clients-item clients-item-flex-layout">
               <span class="clients-item-title"
                 ><span class="clients-item-title--yellow">starstar</span
                 >star</span
@@ -303,13 +306,13 @@
                     height="20"
                 /></span>
 
-                <p class="avatar_name">
+                <p class="avatar_name avatar_name-flex-layout">
                   Denny Hilguston <span class="avatar_handle">@denny.hill</span>
                 </p>
               </div>
             </li>
 
-            <li class="clients-item">
+            <li class="clients-item clients-item-flex-layout">
               <span class="clients-item-title"
                 ><span class="clients-item-title--yellow">starstar</span
                 >star</span
@@ -329,13 +332,15 @@
                     height="20"
                 /></span>
 
-                <p class="avatar_name">
+                <p class="avatar_name avatar_name-flex-layout">
                   Vani Pandey <span class="avatar_handle">@vani.pandey</span>
                 </p>
               </div>
             </li>
 
-            <li class="clients-item">
+            <li
+              class="clients-item clients-item--center clients-item-flex-layout"
+            >
               <span class="clients-item-title"
                 ><span class="clients-item-title--yellow">starstar</span
                 >star</span
@@ -355,7 +360,7 @@
                     height="20"
                 /></span>
 
-                <p class="avatar_name">
+                <p class="avatar_name avatar_name-flex-layout">
                   milly Singh <span class="avatar_handle">@milly.singh</span>
                 </p>
               </div>
