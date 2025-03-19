@@ -27,7 +27,7 @@ html {
 body {
   font-family: var(--family-Inter, sans-serif);
   font-weight: 400;
-  font-size: var(--font-size-body, 12);
+  font-size: var(--font-size-body, 1.2rem);
   background: var(--background, #010101);
   color: var(--forground-100, #fff);
 }
@@ -50,7 +50,7 @@ p {
 }
 
 .not-full-width {
-  padding-inline: 2.5rem;
+  padding-inline: clamp(2.5rem, 0.8rem + 2.3vw, 4rem);
 }
 
 .full-bleed {
@@ -509,12 +509,12 @@ p {
   border: 2px solid transparent;
   box-shadow: 0px 0px 2px 2px #aa14f0;
   background: linear-gradient(
-      rgba(170, 20, 240, 1) 0%,
-      rgba(170, 20, 240, 0.18) 33%,
-      rgba(151, 60, 68, 0.05) 100%,
-      rgba(0, 0, 0, 0) 100%,
-      rgba(170, 20, 240, 1) 100%,
-      rgba(185, 54, 245, 0) 100%
+      #aa14f0 0%,
+      #aa14f02e 33%,
+      #973c440d 100%,
+      #00000000 100%,
+      #aa14f0 100%,
+      #b936f500 100%
     ),
     linear-gradient(#b936f5 0%, #b936f5 0%, #aa14f0 100%);
   background-repeat: no-repeat;
@@ -623,6 +623,57 @@ p {
   color: #eb4468;
 }
 
+.company-culture {
+  margin-block-end: 5rem;
+}
+
+.company-culture-flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.company-culture_title {
+  font-family: var(--family-orbitron);
+  font-size: 1.9rem;
+  max-inline-size: 15ch;
+  margin-block-end: 2.5rem;
+}
+
+.company-culture_icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.company-culture_text {
+  max-inline-size: 31.6ch;
+}
+
+.company-culture_emoji-list {
+  padding: 0;
+  list-style: none;
+}
+
+.company-culture_emoji-list-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: end;
+  gap: 1rem;
+}
+
+.company-culture_emoji-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.company-culture_emoji-item > * {
+  flex: 1;
+}
+
 @media (max-width: 40em) {
   .menu-button {
     font-size: var(--logo-font-size, 2.335rem);
@@ -664,5 +715,10 @@ p {
 
   .reality-headsets_list-grid-layout {
     grid-template-columns: 1fr;
+  }
+
+  .company-culture-flex-layout {
+    justify-content: unset;
+    gap: 3rem;
   }
 }
