@@ -39,19 +39,35 @@
       <nav class="navbar navbar-flex-layout">
         <a href="/" class="logo">Light</a>
 
-        <button class="menu-button"><i class="fa-solid fa-bars"></i></button>
+        <button class="menu-button" data-open="open">
+          <i class="fa-solid fa-bars"></i>
+        </button>
 
         <ul role="list" class="navbar_list navbar_list-flex-layout">
-          <li>
-            <a href="#" class="navbar_link navbar_link--active active">Home</a>
+          <li class="navbar_item navbar_item--display">
+            <button class="navbar_item_button--close" data-close="cclose">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
           </li>
           <li>
-            <a href="#" class="navbar_link navbar_link--active">Company</a>
+            <a href="#" class="navbar_link navbar_link--active active"
+              ><i class="fa-solid fa-house navbar_link_icon"></i>Home</a
+            >
           </li>
           <li>
-            <a href="#" class="navbar_link navbar_link--active">Features</a>
+            <a href="#" class="navbar_link navbar_link--active"
+              ><i class="fa-solid fa-building navbar_link_icon"></i>Company</a
+            >
           </li>
-          <li><a href="#" class="button">Sign Up</a></li>
+          <li>
+            <a href="#" class="navbar_link navbar_link--active"
+              ><i class="fa-solid fa-ranking-star navbar_link_icon"></i
+              >Features</a
+            >
+          </li>
+          <li class="navbar_item--mobile-mode">
+            <a href="#" class="button button--mobile-mode">Sign Up</a>
+          </li>
         </ul>
       </nav>
 
@@ -462,7 +478,7 @@
             We specialize in creating visual identities for products and branda
             in your company.
           </p>
-          <form class="form-email" name="formEmail">
+          <form class="form-email" name="formEmail" novalidate>
             <input
               class="email"
               type="email"

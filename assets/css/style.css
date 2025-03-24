@@ -20,10 +20,6 @@
   --orbitron-black: 900;
 }
 
-html {
-  background: #d4d2d2;
-}
-
 body {
   font-family: var(--family-Inter, sans-serif);
   font-weight: 400;
@@ -85,6 +81,10 @@ p {
   font-weight: 500;
 }
 
+.navbar_item--display {
+  display: none;
+}
+
 .navbar_link:hover,
 .navbar_link:focus-visible {
   color: transparent;
@@ -101,9 +101,12 @@ p {
   gap: 3rem;
 }
 
+.navbar_link_icon {
+  display: none;
+}
+
 .navbar_link {
   display: block;
-  transition: color 1s;
 }
 
 .navbar_link--active.active {
@@ -273,6 +276,7 @@ p {
 }
 
 .head-content-texts-2 {
+  isolation: isolate;
   text-align: center;
 }
 
@@ -780,7 +784,85 @@ p {
   }
 
   .navbar_list {
-    display: none;
+    min-inline-size: 50%;
+    padding-inline: 1.5rem;
+    padding-block-start: 2rem;
+    background: #fff;
+  }
+
+  .navbar_list-flex-layout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 3;
+    translate: 100%;
+    opacity: 0;
+    transition: translate 1s cubic-bezier(0, 0.5, 1, 1),
+      opacity 1s cubic-bezier(0, 0.5, 1, 1);
+  }
+
+  .navbar_list.animate {
+    translate: 0%;
+    opacity: 1;
+  }
+
+  .navbar_link {
+    background: var(--background, #010101);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .navbar_link_icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-inline-end: 1rem;
+  }
+
+  .fa-xmark {
+    font-size: var(--logo-font-size, 2.335rem);
+    background: var(--background, #000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .navbar_item--display {
+    display: block;
+  }
+
+  .navbar_item_button--close {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #010101;
+    background: transparent;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+    transition: all 1s;
+  }
+
+  .navbar_item_button--close:hover,
+  .navbar_item_button--close:focus-visible {
+    background: #0101011a;
+  }
+
+  .navbar_item_button--close:active {
+    transform: scale(0.9);
+  }
+
+  .navbar_item--mobile-mode {
+    text-align: center;
+    width: 100%;
+  }
+
+  .button--mobile-mode {
+    display: inline-block;
+    min-width: 100%;
   }
 
   .head-content-grid-layout {
@@ -816,5 +898,18 @@ p {
 
   .form-button {
     grid-column: 1/-1;
+  }
+
+  .scroll {
+    overflow: hidden;
+  }
+
+  .overlay::after {
+    position: fixed;
+    content: "";
+    inset: 0;
+    z-index: 2;
+    opacity: 0.7;
+    background: var(--background, #010101);
   }
 }
