@@ -35,17 +35,24 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body class="wrapper">
-    <header class="not-full-width">
+    <header id="top" class="not-full-width">
+      <a href="#main-content" class="skip-to-content"
+        ><span>Skip to content</span></a
+      >
       <nav class="navbar navbar-flex-layout">
         <a href="/" class="logo">Light</a>
 
-        <button class="menu-button" data-open="open">
+        <button class="menu-button" aria-label="open menu" data-open="open">
           <i class="fa-solid fa-bars"></i>
         </button>
 
         <ul role="list" class="navbar_list navbar_list-flex-layout">
           <li class="navbar_item navbar_item--display">
-            <button class="navbar_item_button--close" data-close="cclose">
+            <button
+              class="navbar_item_button--close"
+              aria-label="close menu"
+              data-close="cclose"
+            >
               <i class="fa-solid fa-xmark"></i>
             </button>
           </li>
@@ -152,7 +159,7 @@
       </section>
     </header>
 
-    <main class="full-bleed wrapper">
+    <main id="main-content" class="full-bleed wrapper">
       <section
         aria-labelledby="experience-playing-game"
         class="experience-playing-game experience-playing-game-flex-layout not-full-width"
@@ -503,6 +510,9 @@
           </form>
         </div>
       </section>
+      <a href="#top" class="skip-to-top" aria-label="back to the top"
+        ><i class="fa-solid fa-up-long"></i
+      ></a>
     </main>
 
     <script type="module" src="assets/js/index.js"></script>
