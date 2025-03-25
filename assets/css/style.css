@@ -1,13 +1,23 @@
 :root {
-  --background: linear-gradient(
-    #010208 16%,
-    #010206 21%,
-    #040008 25%,
-    #010101 30%,
-    #010101 34%,
-    #010101 36%,
-    #010101 100%
-  );
+  --background: radial-gradient(
+      26% 230px at 34% 0,
+      #aa14f080 0%,
+      #aa14f000 100%
+    ),
+    radial-gradient(38% 250px at left 20%, #aa14f080 0%, #aa14f000 100%),
+    radial-gradient(30% 220px at right 20%, #aa14f080 0%, #aa14f000 100%),
+    radial-gradient(23% 220px at right 84%, #aa14f080 0%, #aa14f000 100%),
+    radial-gradient(30% 280px at left 66%, #aa14f080 0%, #aa14f000 100%),
+    radial-gradient(30% 230px at left 87%, #aa14f080 0%, #aa14f000 100%),
+    linear-gradient(
+      #010208 16%,
+      #010206 21%,
+      #040008 25%,
+      #010101 30%,
+      #010101 34%,
+      #010101 36%,
+      #010101 100%
+    );
   --forground-100: #ffffff;
   --forground-85: #ffffffd9;
 
@@ -29,6 +39,7 @@ body {
   font-weight: 400;
   font-size: var(--font-size-body, 1.2rem);
   background: var(--background, #010101);
+  background-repeat: no-repeat;
   color: var(--forground-100, #fff);
 }
 
@@ -341,7 +352,7 @@ p {
   content: "";
   height: 45%;
   width: 100%;
-  background: var(--background);
+  background: #010101;
   z-index: -1;
 }
 
@@ -353,7 +364,7 @@ p {
   right: 0;
   height: 65%;
   width: 10%;
-  background: var(--background);
+  background: #010101;
   z-index: -1;
 }
 
@@ -800,7 +811,7 @@ p {
   z-index: 2;
   bottom: 50px;
   right: 30px;
-  background: #fff;
+  background: #e0dfdfc6;
   padding: 1rem 1.5rem;
   border-radius: 8px;
 }
@@ -815,6 +826,27 @@ p {
 }
 
 @media (max-width: 40em) {
+  :root {
+    --background: radial-gradient(
+        42% 250px at 38% 0,
+        #aa14f080 0%,
+        #aa14f000 100%
+      ),
+      radial-gradient(38% 250px at left 20%, #aa14f080 0%, #aa14f000 100%),
+      radial-gradient(23% 300px at right 28%, #aa14f080 0%, #aa14f000 100%),
+      radial-gradient(28% 250px at right 90%, #aa14f080 0%, #aa14f000 100%),
+      radial-gradient(30% 280px at left 66%, #aa14f080 0%, #aa14f000 100%),
+      radial-gradient(30% 230px at left 87%, #aa14f080 0%, #aa14f000 100%),
+      linear-gradient(
+        #010208 16%,
+        #010206 21%,
+        #040008 25%,
+        #010101 30%,
+        #010101 34%,
+        #010101 36%,
+        #010101 100%
+      );
+  }
   .menu-button {
     font-size: var(--logo-font-size, 2.335rem);
     display: inline-block;
@@ -957,7 +989,7 @@ p {
     content: "";
     inset: 0;
     z-index: 2;
-    opacity: 0.7;
-    background: var(--background, #010101);
+    opacity: 0.8;
+    background: #010101;
   }
 }
