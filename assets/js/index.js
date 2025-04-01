@@ -1,5 +1,5 @@
-import { openMenu, openButton } from "./openMenu.js";
-import showBackToTop from "./showBackToTop.js";
+import handleEvents from "./handleEvents.js";
+import isValidEmail from "./isValidEmail.js";
 
-openButton.addEventListener("click", openMenu);
-addEventListener("scroll", showBackToTop);
+isValidEmail();
+handleEvents();
